@@ -1,0 +1,12 @@
+{
+  "name": "INDECISION-APP",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MohanRaj0310/React_indecision_app.git",
+  "author": "Mohanraj",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
+}
