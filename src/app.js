@@ -108,3 +108,4 @@ console.log(user.age >= 25 && true)
 console.log([1, 2, 3])
 let array = ['swdhu',24333,73434783478]
 console.log(array)
+console.log(Array)
