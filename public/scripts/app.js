@@ -1,5 +1,3 @@
-'use strict';
-
 // let template = <h1>i'm from scripts/app.js</h1>
 
 // let appRoot = document.getElementById('app')
@@ -111,53 +109,36 @@
 // console.log(array)
 // console.log(Array)
 
-var count = 0;
-var addOne = function addOne() {
-  count++;
-  counterApp();
-};
-var subOne = function subOne() {
-  count--;
-  counterApp();
-};
-var reset = function reset() {
-  count = 0;
-  counterApp();
-};
+// let x;
+// const app = {
+//   options: []
+// }
 
-var f1 = function f1() {
-  console.log('dkoeod');
-};
+// const onFormSubmit = (e) => {
+//   e.preventDefault();
+//   const option = e.target.elements.option.value;
+//   if (option){
+//     app.options.push(option)
+//     e.target.elements.option.value = '';
+//   }
+//   renderFunc()
+// }
 
-var appRoot = document.getElementById('app');
+// let appRoot = document.getElementById('app')
 
-var counterApp = function counterApp() {
-  var template = React.createElement(
-    'div',
-    null,
-    React.createElement(
-      'h1',
-      null,
-      'Count: ',
-      count
-    ),
-    React.createElement(
-      'button',
-      { onClick: addOne },
-      '+1'
-    ),
-    React.createElement(
-      'button',
-      { onClick: subOne },
-      '-1'
-    ),
-    React.createElement(
-      'button',
-      { onClick: reset },
-      'Reset'
-    )
-  );
-  ReactDOM.render(template, appRoot);
-};
-
-counterApp();
+// const renderFunc = () => {
+//   let template = (
+//     <div>
+//       <h1>form subMission</h1>
+//       <form onSubmit = {onFormSubmit}>
+//         <input type="text" name="option"/>
+//         <button>Add Option</button>
+//       </form>
+//       <p>{app.options.length}</p>
+//     </div>
+//   );
+//   ReactDOM.render(template, appRoot)
+// }
+// // console.log(x)
+// renderFunc();
+"use strict";
