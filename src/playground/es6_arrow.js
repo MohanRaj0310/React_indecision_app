@@ -207,46 +207,44 @@
 // console.log(obj)
 
 /************************************************Foreach */
-var num = 34
-let user = {
-  age: 56,
-  cities: ['a1', 'a2', 'a3', 'a4'],
-  placesILived: function () {
-    let that = this
-      this.cities.forEach(function (city) {
-        console.log(city + that.age)
-    })
-  },
-  func: function () {
-    let num = 89
-    console.log(this)
-    return () =>{
-      return this.age// 56
-    }
-  },
-  arrow: () => {
-    let newVal = 67
-    console.log(this)
-    return function (){
-      return this.age//undefined
-    }
-  },
-  arrow1: () => {
-    return () => {
-      return this.age
-    }  
-  } 
-}
-user.placesILived()
-let recVal = user.func()
-console.log(recVal())
-let arrowVal = user.arrow()
-console.log(arrowVal())
+// var num = 34
+// let user = {
+//   age: 56,
+//   cities: ['a1', 'a2', 'a3', 'a4'],
+//   placesILived: function () {
+//     let that = this
+//       this.cities.forEach(function (city) {
+//         console.log(city + that.age)
+//     })
+//   },
+//   func: function () {
+//     let num = 89
+//     console.log(this)
+//     return () =>{
+//       return this.age// 56
+//     }
+//   },
+//   arrow: () => {
+//     let newVal = 67
+//     console.log(this)
+//     return function (){
+//       return this.age//undefined
+//     }
+//   },
+//   arrow1: () => {
+//     return () => {
+//       return this.age
+//     }  
+//   } 
+// }
+// user.placesILived()
+// let recVal = user.func()
+// console.log(recVal())
+// let arrowVal = user.arrow()
+// console.log(arrowVal())
 
-let i = user.arrow1()
-console.log(i())
-
-
+// let i = user.arrow1()
+// console.log(i())
 // let array = [90, 89, 78, 92]
 
 // array.forEach(function agedPerson (x){
@@ -255,8 +253,71 @@ console.log(i())
 
 
 
+/************************new way of declaring a functions into an object which is introduced by es6 */
+let obj = {
+  item : 1,
+  item: 2,
+  year: [1999, 1993, 2000, 2017],
+  name1: ['mohan', 'dhilip', 'kavya', 'nithish'],
+  sum(a, b){ /*************************************** */
+    console.log(arguments)
+  },
+  arrow: () => {
 
+  },
+  /**************Map --> array method */
+  mapFunc() {
+    const mapVal = this.name1.map((xName) => {
+      return `hii chellam ` + xName
+      // let that = this
+      // this.year.map(function (year){
+      //   return that.year - 2021
+      // })
+     
+    })
+    return mapVal
+  }
+}
 
+obj.sum(90, 78, 90)
+let mapNewVal = obj.mapFunc();
+console.log(mapNewVal)
+
+let array = [8923, 456, 15, 78, 1, 0]
+console.log(array.sort())
+
+// sringGetPrinted('siouwuusws8')
+
+// stringGetPrinted() {
+//   console.log('swusw')// error***************************
+// }
+
+//challenge 
+
+const tableForSpecific = {
+  numbers: [90, 76, 45],
+  multiplyBY: 2,
+  multiplayer(){
+    const ansMulti = this.numbers.map((num) => {
+      return num * this.multiplyBY
+    })
+    return ansMulti
+  },
+  divider() {
+    const div = this.numbers.forEach((num) => {
+      return num/3
+    })
+    return div
+  }
+}
+
+console.log(tableForSpecific.multiplayer())
+console.log(tableForSpecific.divider())
+
+let array1 = [90, 76, 89]
+
+let ret = array1.forEach((x) => console.log(x))
+console.log(ret)
 
 
 
