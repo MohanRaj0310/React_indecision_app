@@ -315,9 +315,11 @@ console.log(tableForSpecific.multiplayer())
 console.log(tableForSpecific.divider())
 
 let array1 = [90, 76, 89]
+let ret = []
 
-let ret = array1.forEach((x) => console.log(x))
+ret.push(array1.forEach((x) => x /2))
 console.log(ret)
+console.log()
 
 
 

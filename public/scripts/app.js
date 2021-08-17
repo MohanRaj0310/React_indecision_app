@@ -312,8 +312,10 @@ console.log(tableForSpecific.multiplayer());
 console.log(tableForSpecific.divider());
 
 var array1 = [90, 76, 89];
+var ret = [];
 
-var ret = array1.forEach(function (x) {
-  return console.log(x);
-});
+ret.push(array1.forEach(function (x) {
+  return x / 2;
+}));
 console.log(ret);
+console.log();
