@@ -203,12 +203,55 @@
   
 // }
 // let reCeiver = obj.func()
-// // console.log(reCeiver())//undefined
-// // console.log(obj)
+// console.log(reCeiver())//undefined
+// console.log(obj)
+
+/************************************************Foreach */
+var num = 34
+let user = {
+  age: 56,
+  cities: ['a1', 'a2', 'a3', 'a4'],
+  placesILived: function () {
+    let that = this
+      this.cities.forEach(function (city) {
+        console.log(city + that.age)
+    })
+  },
+  func: function () {
+    let num = 89
+    console.log(this)
+    return () =>{
+      return this.age// 56
+    }
+  },
+  arrow: () => {
+    let newVal = 67
+    console.log(this)
+    return function (){
+      return this.age//undefined
+    }
+  },
+  arrow1: () => {
+    return () => {
+      return this.age
+    }  
+  } 
+}
+user.placesILived()
+let recVal = user.func()
+console.log(recVal())
+let arrowVal = user.arrow()
+console.log(arrowVal())
+
+let i = user.arrow1()
+console.log(i())
 
 
+// let array = [90, 89, 78, 92]
 
-
+// array.forEach(function agedPerson (x){
+//   x > 90 && console.log(x)
+// })
 
 
 

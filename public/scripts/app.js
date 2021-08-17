@@ -1,3 +1,5 @@
+'use strict';
+
 // const sumArrow = (x, y) => x + y
 // console.log(sumArrow(90, 89))
 
@@ -202,6 +204,53 @@
 
 // }
 // let reCeiver = obj.func()
-// // console.log(reCeiver())//undefined
-// // console.log(obj)
-"use strict";
+// console.log(reCeiver())//undefined
+// console.log(obj)
+
+/************************************************Foreach */
+var num = 34;
+var user = {
+  age: 56,
+  cities: ['a1', 'a2', 'a3', 'a4'],
+  placesILived: function placesILived() {
+    var that = this;
+    this.cities.forEach(function (city) {
+      console.log(city + that.age);
+    });
+  },
+  func: function func() {
+    var _this = this;
+
+    var num = 89;
+    console.log(this);
+    return function () {
+      return _this.age; // 56
+    };
+  },
+  arrow: function arrow() {
+    var newVal = 67;
+    console.log(undefined);
+    return function () {
+      return this.age; //undefined
+    };
+  },
+  arrow1: function arrow1() {
+    return function () {
+      return undefined.age;
+    };
+  }
+};
+user.placesILived();
+var recVal = user.func();
+console.log(recVal());
+var arrowVal = user.arrow();
+console.log(arrowVal());
+
+var i = user.arrow1();
+console.log(i());
+
+// let array = [90, 89, 78, 92]
+
+// array.forEach(function agedPerson (x){
+//   x > 90 && console.log(x)
+// })
