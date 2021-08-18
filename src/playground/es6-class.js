@@ -1,7 +1,7 @@
 //class like blueprint
 //so we can make more class based on blueprint
 //each class may be havin unique things where instances comes in and play there
-//we should have constructor function like class when you having instances. constructor will be called when you create instance
+//we should have constructor function when you having instances. constructor will be called when you create instance
 
 // var name = 'dev'
 // let obj = {
