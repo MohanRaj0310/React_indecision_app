@@ -284,7 +284,7 @@
 // rerender_app()
 
 /****************practice session */
-
+/*
 var x = 90
 
 let rerender_app = () => {
@@ -299,3 +299,67 @@ let rerender_app = () => {
 }
 
 rerender_app()
+*/
+class IndecisionApp extends React.Component {
+  render (){
+    return (
+      <div>
+        <Header />
+        <Action />
+        <Options />
+        <AddOption />
+      </div>
+    )
+  }
+}
+
+class Header extends React.Component {
+  render (){
+    return (
+      <div>
+      <h1>Indecision App</h1>
+    </div>
+    )
+  }
+}
+
+class Action extends React.Component {
+  render() {
+    return (
+      <div>
+        <button>What Should i do</button>
+      </div>
+    )
+  }
+}
+
+class Options extends React.Component {
+  render (){
+    return (
+      <div>
+        1.we can consume lot but practise is from consume. if you do that, you won't be forgot anything
+      </div>
+    )
+  }
+}
+
+class AddOption extends React.Component {
+  render (){
+    return (
+      <div>
+        2.we can consume lot but practise is from consume. if you do that, you won't be forgot anything
+      </div>
+    )
+  }
+}
+
+let jsx = (
+  <div>
+    <Header />
+    <Action />
+    <Options />
+    <AddOption />
+  </div>  
+)
+
+ReactDOM.render(jsx, document.getElementById('app'))
