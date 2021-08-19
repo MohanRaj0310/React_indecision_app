@@ -320,12 +320,16 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: 'render',
     value: function render() {
+      console.log(this);
+      var title = 'Indecsion App';
+      var subTitle = 'Practise makes Perfect';
+      var options = ['Thing one', 'Thing two', 'Thing three'];
       return React.createElement(
         'div',
         null,
-        React.createElement(Header, null),
+        React.createElement(Header, { title: title, subTitle: subTitle }),
         React.createElement(Action, null),
-        React.createElement(Options, null),
+        React.createElement(Options, { options: options }),
         React.createElement(AddOption, null)
       );
     }
@@ -346,13 +350,20 @@ var Header = function (_React$Component2) {
   _createClass(Header, [{
     key: 'render',
     value: function render() {
+      console.log(this.props);
+      console.log(this);
       return React.createElement(
         'div',
         null,
         React.createElement(
           'h1',
           null,
-          'Indecision App'
+          this.props.title
+        ),
+        React.createElement(
+          'h1',
+          null,
+          this.props.subTitle
         )
       );
     }
@@ -403,7 +414,10 @@ var Options = function (_React$Component4) {
       return React.createElement(
         'div',
         null,
-        '1.we can consume lot but practise is from consume. if you do that, you won\'t be forgot anything'
+        this.props.options.map(function (option) {
+          return React.createElement(Option, { key: option, optionText: option });
+        }),
+        React.createElement(Option, null)
       );
     }
   }]);
@@ -411,8 +425,36 @@ var Options = function (_React$Component4) {
   return Options;
 }(React.Component);
 
-var AddOption = function (_React$Component5) {
-  _inherits(AddOption, _React$Component5);
+var Option = function (_React$Component5) {
+  _inherits(Option, _React$Component5);
+
+  function Option() {
+    _classCallCheck(this, Option);
+
+    return _possibleConstructorReturn(this, (Option.__proto__ || Object.getPrototypeOf(Option)).apply(this, arguments));
+  }
+
+  _createClass(Option, [{
+    key: 'render',
+    value: function render() {
+      // console.log(this)
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'p',
+          null,
+          this.props.optionText
+        )
+      );
+    }
+  }]);
+
+  return Option;
+}(React.Component);
+
+var AddOption = function (_React$Component6) {
+  _inherits(AddOption, _React$Component6);
 
   function AddOption() {
     _classCallCheck(this, AddOption);
@@ -423,10 +465,11 @@ var AddOption = function (_React$Component5) {
   _createClass(AddOption, [{
     key: 'render',
     value: function render() {
+      // console.log(this)
       return React.createElement(
         'div',
         null,
-        '2.we can consume lot but practise is from consume. if you do that, you won\'t be forgot anything'
+        'AddOption here'
       );
     }
   }]);
@@ -434,13 +477,4 @@ var AddOption = function (_React$Component5) {
   return AddOption;
 }(React.Component);
 
-var jsx = React.createElement(
-  'div',
-  null,
-  React.createElement(Header, null),
-  React.createElement(Action, null),
-  React.createElement(Options, null),
-  React.createElement(AddOption, null)
-);
-
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
